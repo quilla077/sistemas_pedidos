@@ -16,8 +16,8 @@ import java.net.UnknownHostException;
 @SpringBootApplication
 @AllArgsConstructor
 public class DemoApplication {
-	public static final String ACCOUNT_SID = "AC757a72ed75d2d5251925c7963bbea74b";
-	public static final String AUTH_TOKEN = "65251512c9340d9ce93f9849ba5f283a";
+	//public static final String ACCOUNT_SID = "AC757a72ed75d2d5251925c7963bbea74b";
+	//public static final String AUTH_TOKEN = "65251512c9340d9ce93f9849ba5f283a";
 	//public static final TareaAutomatica tareaAutomatica = null;
 
 	public static void main(String[] args) throws UnknownHostException, SocketException {
