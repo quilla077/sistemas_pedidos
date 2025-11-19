@@ -84,7 +84,7 @@ public class TareaAutomatica {
     public void tareaCadaMinuto() {
         revisarOfertaPagada();
         revisarReservasExpiradas();
-        envioMensajesWap();
+        //envioMensajesWap();
         revisarProductosCaducados();
     }
     public void revisarReservasExpiradas(){

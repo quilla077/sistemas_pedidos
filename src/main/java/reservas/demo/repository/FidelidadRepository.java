@@ -13,7 +13,7 @@ import java.util.List;
 public interface FidelidadRepository extends JpaRepository<Fidelidad, Long> {
     @Query(value = "SELECT id_comp AS idComp, COUNT(id_comp) AS numeroVeces " +
             "FROM fidelidad f " +
-            "WHERE fecha_res >= DATE_SUB(CURDATE(), INTERVAL 2 MONTH) " +
+            "WHERE fecha_res >= DATE_SUB(NOW(), INTERVAL 2 MONTH) " +
             "AND f.id_socio = :idSocio " +
             "GROUP BY id_comp,f.cel_comp  " +
             "ORDER BY numeroVeces DESC " +
@@ -24,7 +24,7 @@ public interface FidelidadRepository extends JpaRepository<Fidelidad, Long> {
             id_comp AS id_comp,
             COUNT(id_comp) AS numero_veces, cel_comp AS numcel
         FROM fidelidad f
-        WHERE fecha_res >= DATE_SUB(CURDATE(), INTERVAL :nmeses MONTH)
+        WHERE fecha_res >= CURRENT_DATE - INTERVAL '1 month' * :nmeses
         AND f.id_socio = :idSocio
         GROUP BY id_comp,f.cel_comp 
         ORDER BY numero_veces DESC
@@ -35,3 +35,4 @@ public interface FidelidadRepository extends JpaRepository<Fidelidad, Long> {
             @Param("nmeses") int nmeses,
             @Param("ncont") int ncont);
 }
+/*              -- WHERE fecha_res >= DATE_SUB(NOW(), INTERVAL :nmeses MONTH)       */

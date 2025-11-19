@@ -17,24 +17,24 @@ public interface UsuarioRepository extends JpaRepository<Usuario,Long> {
     Long findMaxIdPersona();
 
     List<Usuario> findByRole(String name);
-    @Query(value="select * from user u where u.role like ?1",
+    @Query(value="select * from usuario u where u.role like ?1",
             nativeQuery = true)
     List<Usuario> buscarTipo(String tipo);
 
-    @Query(value="select * from user u where u.`role` like 'CUST' and u.id_area = ?1",
+    @Query(value="select * from usuario u where u.`role` like 'CUST' and u.id_area = ?1",
             nativeQuery = true)
     List<Usuario> buscarCustArea(int area);
-    @Query(value="select * from user u where u.`role` like 'PROP' and u.id_area = ?1",
+    @Query(value="select * from usuario u where u.`role` like 'PROP' and u.id_area = ?1",
             nativeQuery = true)
     List<Usuario> buscarPropArea(int area);
-    @Query(value="select * from user u where u.username like ?1",
+    @Query(value="select * from usuario u where u.username like ?1",
             nativeQuery = true)
     Usuario obtenerByUsername(String username);
-    @Query(value="select * from user u where u.role like 'SEG' or u.role like 'ADMIN'",
+    @Query(value="select * from usuario u where u.role like 'SEG' or u.role like 'ADMIN'",
             nativeQuery = true)
     List<Usuario> buscarTipoReg();
 
-    @Query(value = "select u.carnet from user u where u.username like ?1 ",nativeQuery = true)
+    @Query(value = "select u.carnet from usuario u where u.username like ?1 ",nativeQuery = true)
     Long obtenerId(String username);
 
 }

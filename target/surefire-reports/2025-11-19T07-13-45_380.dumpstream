@@ -1,0 +1,5 @@
+# Created at 2025-11-19T07:13:45.802
+Boot Manifest-JAR contains absolute paths in classpath 'D:\proy_matadero\BACKEND\backendNoviembre\sistemas_pedidos\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
